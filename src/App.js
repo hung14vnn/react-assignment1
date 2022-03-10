@@ -5,7 +5,8 @@ import './App.css';
 import HomePage from "./pages/homepage";
 import PostPage from "./pages/postpage";
 import LoginPage from "./pages/login";
-import Navbar from "./components/Navbar/Navbar";
+import PostsBody from "./pages/postsbody";
+// import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/posts" element={<PostPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/posts/:id" element={<PostsBody />} />
     </Routes>
     </BrowserRouter>
   );
