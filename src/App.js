@@ -27,7 +27,7 @@ function App() {
           Profile
         </Link>
         {isLoggedIn ? (
-          <Link className="nav" to="/login" onclick={Logout}>
+          <Link className="nav" to="/login" onClick={Logout}>
             Logout
           </Link>
         ) : (
