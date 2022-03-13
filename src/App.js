@@ -12,8 +12,8 @@ import ProfilePage from './pages/profilepage';
 function App() {
   const isLoggedIn = localStorage.getItem('token');
   function Logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
   }
   return (
     <BrowserRouter>
