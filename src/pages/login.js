@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 const LoginPage = () => {
     const [value, setValues] = React.useState({
         username: '',
@@ -16,7 +17,18 @@ const LoginPage = () => {
         };  
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        fetch('https://60dff0ba6b689e001788c858.mockapi.io/tokens', {
+            method: 'GET',
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (json) {
+        const {token, userId} = json;
+        localStorage.setItem('token', token);
+        localStorage.setItem('userId', userId);
+        window.location.href = '/profile';
+    });
     };
     const handleInputBlur = (event) => {
         setTouched({
@@ -70,7 +82,7 @@ const LoginPage = () => {
             placeholder="Password" />
             {touched.password && <p style={{color: 'red',margin:"30px"}}>{errorMessage.password}</p>}
             </div>
-            <button disabled={validForm} style={{display: 'block', margin:"20px"}} type="submit">Login</button>
+            <button onClick={handleSubmit} disabled={validForm} style={{display: 'block', margin:"20px"}} type="submit">Login</button>
         </form>
         </div>
     );
