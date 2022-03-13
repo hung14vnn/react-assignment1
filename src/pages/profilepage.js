@@ -18,7 +18,7 @@ export default function ProfilePage() {
       .then((response) => response.json())
       .then((json) => setUser(json));
   }, [token, userId]);
-  return user !== undefined ? (
+  return userId ? (
     <div>
       <ul>
         <div>ID: {user?.id}</div>
