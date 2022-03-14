@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import LoginPage from "./login"; 
 import Button from '@mui/material/Button';
+import LoginPage from './login';
 export default function ProfilePage() {
-    const [user,setUser]= useState();
-    const token = localStorage.getItem('token');
-    const userId = localStorage.getItem('userId');
+  const [user, setUser] = useState();
+  const token = localStorage.getItem('token');
+  const userId = localStorage.getItem('userId');
 
     useEffect(() => {
         fetch('https://60dff0ba6b689e001788c858.mockapi.io/users/'+userId, {
@@ -31,4 +32,3 @@ export default function ProfilePage() {
         <><p>Log in is required</p><LoginPage /></>
     );
 }
-     
