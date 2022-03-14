@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import {useParams,Link} from 'react-router-dom';
+import Button from '@mui/material/Button';
 export default function PostsBody() {
     const [data, setData] = useState();
     const postID = useParams().id
@@ -16,7 +17,7 @@ export default function PostsBody() {
         <div>ID: {data?.id}</div>
         <div>Details: {data?.body}</div> 
         </ul>
-        <Link to="/">Go Home</Link>
+        <Button variant="outlined" color="success"><Link to="/">Go Home</Link></Button>
     </div>
     );
   };

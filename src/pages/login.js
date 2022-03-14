@@ -1,5 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import FormHelperText from '@mui/material/FormHelperText';
 const LoginPage = () => {
     const [value, setValues] = React.useState({
         username: '',
@@ -59,30 +61,34 @@ const LoginPage = () => {
     const validForm = errorMessage.password || errorMessage.username;
         return (
         <div>
-        <form onSubmit={handleSubmit}>
+        <form>
            <div>
-            <input 
-            style={{display: 'block', margin:"20px"}} 
+            <TextField
+            style={{display: 'block', margin:"20px", size:"small"}} 
             type="text" 
             value={value.username}
             onChange={handleChange}
             onBlur={handleInputBlur}
             name = "username"
-            placeholder="Username" />
-            {touched.username && <p style={{color: 'red', margin:"30px"}}>{errorMessage.username}</p>}
+            placeholder="Username"
+            label="Username"
+            variant="outlined"  />
+            {touched.username && <FormHelperText style={{display: 'block', margin:"20px", color:"red"}}>{errorMessage.username}</FormHelperText>}
             </div>
             <div>
-            <input 
-            style={{display: 'block', margin:"20px"}} 
+            <TextField
+            style={{display: 'block', margin:"20px", size : "small"}} 
             type="password" 
             value={value.password}
             onChange={handleChange}
             onBlur={handleInputBlur}
             name = "password"
-            placeholder="Password" />
-            {touched.password && <p style={{color: 'red',margin:"30px"}}>{errorMessage.password}</p>}
+            placeholder="Password"
+            label="Password"
+            variant="outlined" />
+            {touched.password && <FormHelperText style={{display: 'block', margin:"20px", color:"red"}}>{errorMessage.password}</FormHelperText>}
             </div>
-            <button onClick={handleSubmit} disabled={validForm} style={{display: 'block', margin:"20px"}} type="submit">Login</button>
+            <Button variant="contained" onClick={handleSubmit} disabled={validForm} style={{display: 'block', margin:"20px"}} type="submit">Login</Button>
         </form>
         </div>
     );

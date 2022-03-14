@@ -1,12 +1,16 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
 export default function HomePage() {
   return (
     <div>
-      <h1>Home Page</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+      <Typography variant="h5" component="h6">
+  Homepage
+</Typography>
+<Typography variant="body1" component="body1">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
         voluptate.
-      </p>
+</Typography>
+    
     </div>
   );
 };
