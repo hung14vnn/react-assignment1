@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import LoginPage from "./login"; 
 import Button from '@mui/material/Button';
-import LoginPage from './login';
 export default function ProfilePage() {
   const [user, setUser] = useState();
   const token = localStorage.getItem('token');

@@ -2,7 +2,19 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormHelperText from '@mui/material/FormHelperText';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
 const LoginPage = () => {
+    //     const rmCheck = document.getElementById("rememberMe"),
+//     usertoken = "3";
+
+// if (localStorage.checkbox && localStorage.checkbox !== "") {
+//   rmCheck.setAttribute("checked", "checked");
+//   localStorage.setItem('userId', usertoken);
+// } else {
+//   rmCheck.removeAttribute("checked");
+//   localStorage.setItem('userId', undefined);
+// }
     const [value, setValues] = React.useState({
         username: '',
         password: '',
@@ -88,6 +100,8 @@ const LoginPage = () => {
             variant="outlined" />
             {touched.password && <FormHelperText style={{display: 'block', margin:"20px", color:"red"}}>{errorMessage.password}</FormHelperText>}
             </div>
+            <FormControlLabel style={{display: 'block', margin:"20px", size : "small"}} value="lsRememberMe" id="rememberMe" control={<Checkbox defaultChecked />} label="Remember me" />
+            
             <Button variant="contained" onClick={handleSubmit} disabled={validForm} style={{display: 'block', margin:"20px"}} type="submit">Login</Button>
         </form>
         </div>
